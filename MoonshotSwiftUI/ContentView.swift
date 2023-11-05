@@ -12,13 +12,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            NavigationLink {
-                Text("Detail View")
-            } label: {
-                HStack {
-                    Image(systemName: "swift")
-                    Text("Tap Me")
-                        .bold()
+            List(0..<100) { row in
+                NavigationLink("Row \(row)") {
+                    Text("Detail \(row)")
                 }
             }
             .navigationTitle("SwiftUI")
