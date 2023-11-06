@@ -8,18 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    let laout = [
-        GridItem(.adaptive(minimum: 80))
-    ]
+    let astronauts = Bundle.main.decode("astronauts.json")
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: laout) {
-                ForEach(0..<1000) {
-                    Text("Item \($0)")
-                }
-            }
-        }
+        Text("\(astronauts.count)")
     }
 }
 
